@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>factors</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            width: 100%;
+            height: 100vh;
+            row-gap: 1rem;
+        }
+    </style>
+</head>
+<body>
+    
+    <input type="number" id="val" placeholder="Enter the number">
+    <button onclick="call()">Submit</button>
+    <p id="ans"></p>
+
+    <script>
+
+        function call(){
+            val = document.getElementById("val");
+            ans = document.getElementById("ans");
+            for(let i=1;i<=val.value;i++){
+                if(val.value%i==0){
+                    ans.innerHTML += i +",";
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
