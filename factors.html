@@ -14,6 +14,16 @@
             height: 100vh;
             row-gap: 1rem;
         }
+        p{
+            font-size: 1.5rem;
+        }
+        input,button{
+            padding: 10px;
+            font-size: 1rem;
+        }
+        button{
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -32,6 +42,11 @@
                     ans.innerHTML += i +",";
                 }
             }
+
+            setTimeout(()=>{
+                val.value = ""
+                ans.innerHTML = "";
+            },5000);
         }
 
     </script>
