@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Date Formate</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background-color: rgb(122, 122, 233);
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            row-gap: 10px;
+        }
+        input,button{
+            padding: 10px;
+            font-size: 1rem;
+        }
+        p{
+            font-size: 40px;
+        }
+        button{
+            cursor: pointer;
+            border: none;
+            background-color: rgb(255, 0, 0);
+            color: #fff;
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1>Date formate</h1>
+    <input type="number" placeholder="Enter date..." id="date">
+    <input type="number" placeholder="Enter month..." id="month">
+    <input type="number" placeholder="Enter Year..." id="year">
+    <button onclick="call()">Submit</button>
+    <p id="formate1"></p>
+    <p id="formate2"></p>
+    <p id="formate3"></p>
+    <p id="formate4"></p>
+    <p id="valid"></p>
+
+    <script>
+
+        function call(){
+            const date = document.getElementById("date");
+            const month = document.getElementById("month");
+            const year = document.getElementById("year");
+            const formate1 = document.getElementById("formate1");
+            const formate2 = document.getElementById("formate2");
+            const formate3 = document.getElementById("formate3");
+            const formate4 = document.getElementById("formate4");
+            const valid = document.getElementById("valid");
+
+            if(date.value<32){
+                if(month.value<13){
+                    if(year.value<2025){
+                        formate1.innerHTML = date.value+"-"+month.value+"-"+year.value;
+                        formate2.innerHTML = date.value+"/"+month.value+"/"+year.value;
+                        //formate3.innerHTML = date.value+"-"+month.value+"-"+year.value;
+                        //formate4.innerHTML = date.value+"-"+month.value+"-"+year.value;
+                    }
+                    else{
+                        valid.innerHTML = "Enter Valid Year...";
+                    }
+                }
+                else{
+                    valid.innerHTML = "Enter Valid Month...";
+                }
+            }
+            else{
+                valid.innerHTML = "Enter Valid Date..."
+            }
+
+        }
+
+    </script>
+</body>
+</html>
