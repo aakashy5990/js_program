@@ -10,23 +10,47 @@
             justify-content: center;
             align-items: center;
             flex-direction: column;
-            grid-gap: 1rem;
+            gap: 2rem;
             height: 100vh;
         }
         p{
             font-size: 1.5rem;
         }
         input,button{
-            padding: 10px;
             font-size: 1rem;
+        }
+        input[type="number"] {
+            -moz-appearance: textfield;
+        }
+        input{
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            outline: none;
+            background: none;
+        }
+          input[type="number"]::-webkit-inner-spin-button,
+          input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none; /* WebKit browsers */
         }
         button{
             cursor: pointer;
+            padding: 10px;
+            background-color: rgb(255, 47, 47);
+            border: none;
+            padding: 5px 10px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            color: #fff;
         }
+        button:hover{
+            background-color: rgb(221, 55, 55);
+        } 
 
     </style>
 </head>
 <body>
+    <h1>Find factorial Number...</h1>
     <input type="number" id="num" placeholder="Enter the Number...">
     <button onclick="call()">submit</button>
     <input type="text" name="" id="ans">
@@ -38,18 +62,20 @@
         function call(){
             const num = document.getElementById("num");
             num.value;
-            let x =1;
+            let x = 1;
             for(let i=1; i<=num.value;i++){
                 x = x * i;
             }
-            ans.value = x;            
-            document.getElementById("ans").value = x;
+            if(num.value===""){
+                //ans.value = "";
+                document.getElementById("ans").value = "Enter Number...";
+            }
+            else{
+                ans.value = x;            
+                document.getElementById("ans").value = x;
 
-            setTimeout(()=>{
-                num.value = "";
-                ans.value = "";
-            },5000);
-
+            }
+            
         }
 
     </script>
