@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Api</title>
+    <style>
+
+    </style>
+</head>
+<body>
+    
+    <div>
+        <input type="text" placeholder="Enter Your city" name="" id="city_input">
+        <button id="search_btn">Search</button>
+    </div>
+
+    <div>
+        <h3 id="city-name">Canada, Ontario - Toronto</h3>
+        <h6 id="city-time">localtime</h6>
+        <p id="city-temp">3</p>
+    </div>
+
+
+    <script>
+        const input = document.getElementById("city_input")
+        const button = document.getElementById("search_btn")
+
+        const cityName = document.getElementById('city-name')
+        const cityTime = document.getElementById('city-time')
+        const cityTemp = document.getElementById('city-temp')
+
+        async function getData(cityName){
+            const promise = await fetch(
+                `http://api.weatherapi.com/v1/current.json?key=de22fa6d45b9456398e65353242505&q=${cityName}&aqi=yes`
+            );
+            return await promise.json()
+        }
+
+        button.addEventListener('click', async ()=>{
+            const value = input.value
+            const result = await getData(value);
+            console.log(result);
+            cityName.innerText = `${result.location.name}, ${result.location.region} - ${result.location.contry}`
+            cityTime.innerText = `${result.location.localtime}`
+            cityTemp.innerText = `${result.current.temp_c}`
+        })
+    </script>
+</body>
+</html>
+
+<!-- key  -->
+<!-- de22fa6d45b9456398e65353242505 -->
