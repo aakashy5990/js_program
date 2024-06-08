@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loop_css/bootstrap.css">
+    <link rel="stylesheet" href="loop_css/style.css">
+    <link rel="stylesheet" href="loop_css/sum_multi.css">
+
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center alert alert-primary">Sum And Multification of digit...</h2>
+    </div>
+    <div class="container flex main_container">
+        <input type="number" id="input" placeholder="Enter the more than one digit ...">
+        <input type="submit" onclick="call()" class="btn btn-primary" value="Submit">
+        <p class="font-weight-bold" id="pera"></p>
+        <p class="font-weight-bold" id="pera2"></p>
+    </div>
+    
+
+    <script>
+        const input = document.getElementById("input")
+        const pera = document.getElementById("pera")
+        const pera2 = document.getElementById("pera2")
+
+        const call = () =>{
+            let sum = 0
+            let multi = 1
+            let n = parseInt(input.value)
+            if (isNaN(n)){
+                pera.innerHTML = "Please enter a valid number."
+                pera.style.color = 'red';
+                return
+            }
+            else{
+                while(n>0){
+                let r = n%10; 128
+                sum = sum + r;
+                multi = multi * r;
+                n = Math.floor(n / 10);
+                console.log(sum)
+            }
+            pera.innerHTML = `Sum of digit is ${sum}`;
+            pera2.innerHTML = `Multification of digit is ${multi}`;
+            }
+        }
+
+
+    </script>
+</body>
+</html>

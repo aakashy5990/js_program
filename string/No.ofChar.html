@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Characters</title>
+    <link rel="stylesheet" href="string_css/bootstrap.css">
+    <link rel="stylesheet" href="string_css/style.css">
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="alert alert-primary text-center">Count Characters</h1>
+    </div>
+    <div class="container vowels">
+      <label for="inputString">Enter a string:</label>
+      <input type="text" id="inputString" />
+      <button class="btn btn-primary" onclick="call()">Count Characters</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      // Function to count alphabets, numbers, and special characters in a string and display their counts individually
+      function call() {
+        const str = document.getElementById("inputString").value;
+        const charCounts = {
+          alphabets: 0,
+          numbers: 0,
+          specialChars: 0,
+        };
+
+        for (let char of str) {
+          if (/[a-zA-Z]/.test(char)) {
+            charCounts.alphabets++;
+          } else if (/[0-9]/.test(char)) {
+            charCounts.numbers++;
+          } else {
+            charCounts.specialChars++;
+          }
+        }
+
+        let resultHTML = "<h2>Character Counts:</h2>";
+        resultHTML += `<p>Alphabets: ${charCounts.alphabets}</p>`;
+        resultHTML += `<p>Numbers: ${charCounts.numbers}</p>`;
+        resultHTML += `<p>Special Characters: ${charCounts.specialChars}</p>`;
+
+        document.getElementById("result").innerHTML = resultHTML;
+      }
+    </script>
+  </body>
+</html>

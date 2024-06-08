@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Containment Test</title>
+    <link rel="stylesheet" href="string_css/style.css">
+    <link rel="stylesheet" href="string_css/bootstrap.css">
+    <script>
+      function call() {
+        // Get the input values from the user
+        var mainString = document.getElementById("mainString").value;
+        var sequence = document.getElementById("sequence").value;
+
+        // Check if the main string contains the specified sequence
+        var containsSequence = mainString.includes(sequence);
+
+        // Display the result on the webpage
+        if (containsSequence) {
+          document.getElementById("result").innerHTML =
+            "The main string contains the specified sequence.";
+            document.getElementById("result").style.color = "green";
+        } else {
+          document.getElementById("result").innerHTML =
+            "The main string does not contain the specified sequence.";
+            document.getElementById("result").style.color = "green";
+
+        }
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container mt-5">
+      <h2 class="text-center alert alert-primary">String Containment Test</h2>
+    </div>
+    <div class="container">
+      <label for="mainString">Enter Main String:</label>
+      <input type="text" id="mainString" /><br /><br />
+      <label for="sequence">Enter Sequence to Check:</label>
+      <input type="text" id="sequence" /><br /><br />
+      <button class="btn btn-primary" onclick="call()">Test Containment</button
+      ><br /><br />
+      <p id="result"></p>
+    </div>
+  </body>
+</html>

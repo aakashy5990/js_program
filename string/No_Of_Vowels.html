@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Count Vowels</title>
+    <link rel="stylesheet" href="string_css/bootstrap.css">
+    <link rel="stylesheet" href="string_css/style.css">
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="text-center alert alert-primary">Count Vowels</h1>
+    </div>
+    <div class="container vowels">
+      <label for="inputString">Enter a string:</label>
+      <input type="text" id="inputString" />
+      <button class="btn btn-primary" onclick="call()">Count Vowels</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      // Function to count vowels in a string and display their counts individually
+      function call() {
+        const str = document.getElementById("inputString").value.toLowerCase();
+        const vowels = "aeiou";
+        const vowelCounts = {};
+
+        for (let vowel of vowels) {
+          const count = (str.match(new RegExp(vowel, "g")) || []).length;
+          vowelCounts[vowel] = count;
+        }
+
+        let resultHTML = "<h2>Vowel Counts:</h2>";
+        for (let vowel in vowelCounts) {
+          resultHTML += `<p>${vowel}: ${vowelCounts[vowel]}</p>`;
+        }
+
+        document.getElementById("result").innerHTML = resultHTML;
+      }
+    </script>
+  </body>
+</html>

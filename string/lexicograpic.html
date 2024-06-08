@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Comparison</title>
+    <link rel="stylesheet" href="string_css/bootstrap.css">
+    <link rel="stylesheet" href="string_css/style.css">
+    <script>
+      function call() {
+        // Get the input values from the user
+        var string1 = document.getElementById("string1").value;
+        var string2 = document.getElementById("string2").value;
+
+        // Compare the strings lexicographically
+        var result;
+        if (string1 === string2) {
+          result = "The strings are lexicographically equal.";
+        } else {
+          result = "The strings are not lexicographically equal.";
+        }
+
+        // Display the result on the webpage
+        document.getElementById("result").innerHTML = result;
+        document.getElementById("result").style.color = 'green';
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h2 class="text-center alert alert-primary">String Comparison</h2>
+    </div>
+    <div class="container">
+      <label for="string1">Enter String 1:</label>
+      <input type="text" id="string1" /><br /><br />
+      <label for="string2">Enter String 2:</label>
+      <input type="text" id="string2" /><br /><br />
+      <button class="btn btn-primary" onclick="call()">Compare Strings</button><br /><br />
+      <p id="result"></p>
+    </div>
+  </body>
+</html>

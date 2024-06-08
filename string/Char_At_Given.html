@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Character at Index</title>
+    <link rel="stylesheet" href="string_css/style.css">
+    <link rel="stylesheet" href="string_css/bootstrap.css">
+  </head>
+  <body>
+    <h1 class="text-center mt-5">Character at Index</h1>
+    <div class="container main_container flex">
+      <label for="inputString">Enter a string:</label>
+      <input type="text" id="inputString" />
+      <br />
+      <label for="inputIndex">Enter an index:</label>
+      <input type="number" id="inputIndex" min="0" />
+      <br />
+      <button class="btn btn-primary" onclick="call()">Get Character</button>
+      <p class="mt-3" id="result"></p>
+    </div>
+
+    <script>
+      // Function to get the character at a given index in a string
+      const result = document.getElementById("result")
+      function call() {
+        const str = document.getElementById("inputString").value;
+        const index = parseInt(document.getElementById("inputIndex").value);
+
+        if (isNaN(index)) {
+          document.getElementById("result").textContent =
+            "Please enter a valid index.";
+          // result.style.color = "red"
+          return;
+        }
+
+        if (index < 0 || index >= str.length) {
+          document.getElementById("result").textContent = "Index out of range";
+          return;
+        }
+
+        const charAtIndex = str.charAt(index);
+        document.getElementById("result").textContent =
+          "Character at index " + index + ": " + charAtIndex;
+      }
+    </script>
+  </body>
+</html>

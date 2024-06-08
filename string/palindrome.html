@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<string_html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Palindrome Checker</title>
+    <link rel="stylesheet" href="string_css/bootstrap.css">
+    <link rel="stylesheet" href="string_css/style.css">
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h1 class="text-center alert alert-primary">Palindrome Checker</h1>
+    </div>
+    <div class="container vowels">
+      <label for="inputString">Enter a string:</label>
+      <input type="text" id="inputString" />
+      <button class="btn btn-primary" onclick="call()">Check Palindrome</button>
+      <p id="result"></p>
+    </div>
+
+    <script>
+      // Function to check if a string is palindrome or not
+      function call() {
+        const str = document
+          .getElementById("inputString")
+          .value.toLowerCase()
+          .replace(/[^a-zA-Z0-9]/g, "");
+        const reversedStr = str.split("").reverse().join("");
+
+        if (str === reversedStr) {
+          document.getElementById("result").textContent =
+            "The string is a palindrome.";
+        } else {
+          document.getElementById("result").textContent =
+            "The string is not a palindrome.";
+        }
+      }
+    </script>
+  </body>
+</string_html>

@@ -1,0 +1,9 @@
+body,.btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    width: 100px;
+    height: 100vh;
+    flex-direction: column;
+}

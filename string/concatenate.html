@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>String Concatenation</title>
+    <link rel="stylesheet" href="string_css/bootstrap.css">
+    <link rel="stylesheet" href="string_css/style.css">
+    <script>
+      function call() {
+        // Get the input values from the user
+        var mainString = document.getElementById("mainString").value;
+        var appendString = document.getElementById("appendString").value;
+
+        // Concatenate the strings
+        var concatenatedString = mainString + appendString;
+
+        // Display the concatenated string on the webpage
+        document.getElementById("result").innerHTML =
+          "Concatenated String: " + concatenatedString;
+        document.getElementById("result").style.color = "green"
+      }
+    </script>
+  </head>
+  <body>
+    <div class="container mt-4">
+      <h2 class="text-center alert alert-primary">String Concatenation</h2>
+    </div>
+    <div class="container">
+      <label for="mainString">Enter Main String:</label>
+      <input type="text" id="mainString" /><br /><br />
+      <label for="appendString">Enter String to Append:</label>
+      <input type="text" id="appendString" /><br /><br />
+      <button class="btn btn-primary" onclick="call()">Concatenate Strings</button>
+      <p id="result"></p>
+    </div>
+  </body>
+</html>

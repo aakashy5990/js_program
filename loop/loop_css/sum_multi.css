@@ -1,27 +1,15 @@
-body,.btn{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 auto;
-    width: 150px;
-    height: 100vh;
-    flex-direction: column;
-}
-a{
-    margin: 10px;
-    text-decoration: none;
-    border: 1px solid #000;
-    color: #fff;
-    padding: 13px;
-    background-color: rgb(72, 69, 238);
-    width: 100%;
-    text-align: center;
-    font-family: sans-serif;
-}
-a:hover{
-    background-color: rgb(29, 27, 163);
+body{
+    background-color: rgb(75,74,74);
+    color: antiquewhite;
 }
 
+/* ********************************* */
+
+.jumbo-color{
+    background-color: rgb(83, 81, 81);
+}
+
+/* ********************************* */
 
 h1.font-weight-bold{
     font-weight: bold;
@@ -68,9 +56,4 @@ p{
     font-size: 1.2rem;
     font-weight: 700;
     
-}
-
-body{
-    background-color: rgb(75,74,74);
-    color: antiquewhite;
 }

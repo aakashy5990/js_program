@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Tables</title>
+    <link rel="stylesheet" href="loop_css/bootstrap.css">
+    <link rel="stylesheet" href="loop_css/style.css">
+    <link rel="stylesheet" href="loop_css/table.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center alert alert-primary">Table</h2>
+    </div>
+    <div class="container flex main_container">
+        <input type="number" id="input" placeholder="Enter the table number...">
+        <input type="submit" onclick="call()" class="btn btn-success" value="Submit">
+        <p class="font-weight-bold" id="pera"></p>
+    </div>
+    <script>
+        const input = document.getElementById("input")
+        const pera = document.getElementById("pera")
+
+        const call = () => {
+            let x = parseInt(input.value)
+            if (isNaN(x)) {
+                pera.innerHTML = "Please enter a valid number."
+                pera.style.color = 'red';
+                return
+            }
+            
+            let result = ""
+            for (let i = 1; i <= 10; i++) {
+                result += `${x} x ${i} = ${x * i}<br>`
+            }
+            pera.innerHTML = result
+        }
+    </script>
+</body>
+</html>

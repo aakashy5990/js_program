@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="loop_css/bootstrap.css">
+    <link rel="stylesheet" href="loop_css/style.css">
+    <link rel="stylesheet" href="loop_css/reverse.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center alert alert-primary">Reverse of digit...</h2>
+    </div>
+    <div class="container flex main_container">
+        <input type="number" id="input" placeholder="Enter the more than one digit ...">
+        <input type="submit" onclick="call()" class="btn btn-primary" value="Submit">
+        <p class="font-weight-bold" id="pera"></p>
+    </div>
+    
+
+    <script>
+        const input = document.getElementById("input")
+        const pera = document.getElementById("pera")
+
+        const call = () =>{
+            let rev = 0
+            let n = parseInt(input.value)
+            if (isNaN(n)){
+                pera.innerHTML = "Please enter a valid number."
+                pera.style.color = 'red';
+                return
+            }
+            else{
+                while(n>0){
+                let r = n%10;
+                rev = (rev * 10) + r;
+                n = Math.floor(n / 10);
+            }
+            pera.innerHTML = `Reverse of digit is ${rev}`;
+            }
+        }
+
+
+    </script>
+</body>
+</html>
